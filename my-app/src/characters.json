@@ -1,0 +1,75 @@
+[
+    {
+      "id": 0,
+      "name": "Finn",
+      "image": "https://i.ytimg.com/vi/SfKJmCRW9bg/maxresdefault.jpg",
+      "clicked": false
+    },
+    {
+      "id": 1,
+      "name": "Jake",
+      "image": "https://image-cdn.neatoshop.com/styleimg/32464/none/kiwigreen/default/251881-19.jpg",
+      "clicked": false      
+    },
+    {
+      "id": 2,
+      "name": "Bubblegum",
+      "image": "https://oooandart.files.wordpress.com/2015/01/princess-bubblegum-3.png?w=396&h=396&crop=1",
+      "clicked": false      
+    },
+    {
+      "id": 3,
+      "name": "BMO",
+      "image": "https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2017/03/bmo-adventure-time-skateboard-033017.jpg",
+      "clicked": false      
+    },
+    {
+      "id": 4,
+      "name": "Marceline",
+      "image": "https://vignette.wikia.nocookie.net/wwetvcaw/images/e/e6/Marceline_the_Vampire_Queen.png/revision/latest?cb=20140215202505",
+      "clicked": false      
+    },
+    {
+      "id": 5,
+      "name": "LSP",
+      "image": "https://i.ytimg.com/vi/SUzyb_1R1iA/hqdefault.jpg",
+      "clicked": false      
+    },
+    {
+      "id": 6,
+      "name": "Fp",
+      "image": "https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/b/b8/S5e47_FP_listening_to_CB%27s_confession.png/revision/latest?cb=20140216020427",
+      "clicked": false      
+    },
+    {
+      "id": 7,
+      "name": "Fern",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjoTrKcP9cdOEM4H3tHA5cTc2Nm-ENwYv5ui-3R9V6Tp5_6jYhIw",
+      "clicked": false      
+    },
+    {
+      "id": 8,
+      "name": "Ice King",
+      "image": "http://www.imagick.com.br/wp-content/uploads/2013/11/2192519-adventure_time_ice_king_picture_2.jpeg",
+      "clicked": false      
+    },
+    {
+      "id": 9,
+      "name": "Prismo",
+      "image": "https://i.pinimg.com/originals/0c/51/db/0c51db1d3cb058247f744edc367359a4.png",
+      "clicked": false      
+    },
+    {
+      "id": 10,
+      "name": "Billy",
+      "image": "https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/5/53/S1e25_Billy_lightning.png/revision/latest?cb=20120421124321",
+      "clicked": false      
+    },
+    {
+      "id": 11,
+      "name": "Magic Man",
+      "image": "https://cdna.artstation.com/p/assets/images/images/007/353/218/large/damien-saelak-magic-man-2017-by-damien-saelak.jpg?1505536707",
+      "clicked": false      
+    }
+  ]
+  
