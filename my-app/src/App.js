@@ -7,6 +7,7 @@ import Main from './components/Main';
 import CharacterCard from './components/CharacterCard';
 import characters from "./characters.json";
 
+
 console.log(characters)
 
 
@@ -14,7 +15,9 @@ class App extends Component {
     state = {
       characters,
       topScore: 0,
-      score: 0
+      score: 0,
+      shake: '',
+      guessed: ''
     };
 
     shuffle = a => {
@@ -43,41 +46,56 @@ class App extends Component {
       }
     }
 
+    addShake = () => {
+      setTimeout( () =>  this.setState({shake: "shake"}), 10 )
+      this.removeShake()
+    }
+
+    removeShake = () => {
+      this.setState({shake: " "})
+    }
+
 
     //function that changes a characters "clicked" value to true 
     clicked = id => {
       let data = this.state.characters;
       data = this.shuffle(data);
-      let change = this.state.characters[id].clicked
       let char = {};
+
       this.state.characters.forEach((element,index) => {
+        //element.id represents characters.
+        //if element.id equals id of the object clicked. Then in our char object, we record that object in the 'specific' key and record its index
         if(element.id===id){      
           //creating a new key with the specific character object as its value 
-          char.a = element
+          char.specific = element
           //creating a new key, index, that is equal to the the next index it is moved to after shuffle
           char.index = index
         }
       });
+      console.log(char.specific)
+
       //if character clicked is false then.......
-      if(!char.a.clicked){
-        char.a.clicked = true;
-        //state object is ser equal to changed data
-        data[char.index] = char.a;
+      if(!char.specific.clicked){
+        char.specific.clicked = true;
+        // state object is set equal to changed data
+        // we use "[char.index]" because when we console log "data[char.index]", data is an array and we need to target which one it is, this makes it easier than trying to target the id of a moving obejct
+        data[char.index] = char.specific;
+        //incrementing scores
         let newScore = this.state.score + 1;
-        let newTopScore = this.state.topScore
+        let newTopScore = this.state.topScore;
 
         if (this.state.score >= this.state.topScore) {
           newTopScore = this.state.topScore + 1
         }
         
-        this.setState({characters: data, score: newScore, topScore: newTopScore});
+        this.setState({characters: data, score: newScore, topScore: newTopScore, guessed: "You guessed Correctly!"});
         //otherwise if clicked is already true then, we inform and reset
-      } else if (char.a.clicked) {
-        alert('Incorrect Guess')
+      } else if (char.specific.clicked) {
+        this.addShake()
 
+        // alert('Incorrect Guess')
         this.reset(data)
-        this.setState({characters: data, score: 0})
-        console.log(this.state.shake)
+        this.setState({characters: data, score: 0, guessed: "Incorrect Guess!"})
         
       }
 
@@ -91,19 +109,20 @@ class App extends Component {
       <div className="container">
         <Navbar 
           score={this.state.score}
-          topScore={this.state.topScore}          
+          topScore={this.state.topScore}    
+          guessed={this.state.guessed}      
         />
         <Header />
-        <Main >
-        {this.state.characters.map(character => (
-          <CharacterCard
-            clicked={this.clicked}
-            key={character.id}
-            id={character.id}
-            name={character.name}
-            image={character.image}
-          />
-        ))}
+        <Main shake={this.state.shake} >
+          {this.state.characters.map(character => (
+            <CharacterCard
+              clicked={this.clicked}
+              key={character.id}
+              id={character.id}
+              name={character.name}
+              image={character.image}
+            />
+          ))}
         </Main>  
       </div>
     );
