@@ -62,6 +62,7 @@ class App extends Component {
       data = this.shuffle(data);
       let char = {};
 
+
       this.state.characters.forEach((element,index) => {
         //element.id represents characters.
         //if element.id equals id of the object clicked. Then in our char object, we record that object in the 'specific' key and record its index
@@ -88,7 +89,7 @@ class App extends Component {
           newTopScore = this.state.topScore + 1
         }
         
-        this.setState({characters: data, score: newScore, topScore: newTopScore, guessed: "You guessed Correctly!"});
+        this.setState({characters: data, score: newScore, topScore: newTopScore, guessed: "You guessed Correctly!", color: "red"});
         //otherwise if clicked is already true then, we inform and reset
       } else if (char.specific.clicked) {
         this.addShake()
